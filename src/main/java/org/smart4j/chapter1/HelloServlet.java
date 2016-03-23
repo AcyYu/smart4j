@@ -10,12 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by acy on 2016/3/23.
+ * 123
  */
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("123");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime = simpleDateFormat.format(new Date());
         req.setAttribute("currentTime",currentTime);
