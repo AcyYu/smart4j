@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 123
+ * 第一个测试Servlet
  */
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
