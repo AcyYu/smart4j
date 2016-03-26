@@ -3,6 +3,9 @@ package org.smart4j.chapter1.test;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.smart4j.chapter1.helper.DatabaseHelper;
 import org.smart4j.chapter1.model.Customer;
 import org.smart4j.chapter1.service.CustomerService;
 
@@ -17,13 +20,15 @@ public class CustomerServiceTest {
 
     private final CustomerService customerService;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceTest.class);
+
     public CustomerServiceTest() {
         this.customerService = new CustomerService();
     }
 
     @Before
     public void init() {
-        //TODO 初始化数据库
+        DatabaseHelper.executeSqlFile("sql/customer_init.sql");
     }
 
     @Test

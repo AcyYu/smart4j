@@ -52,7 +52,7 @@ public class PropUtil {
      * @param key   建
      * @return key对应的值
      */
-    public String getString(Properties props, String key) {
+    public static String getString(Properties props, String key) {
         return getString(props, key, "");
     }
 
@@ -64,9 +64,9 @@ public class PropUtil {
      * @param defaultValue 默认值
      * @return key对应的值
      */
-    public String getString(Properties props, String key, String defaultValue) {
+    public static String getString(Properties props, String key, String defaultValue) {
         String value = defaultValue;
-        if (props.contains(key)) {
+        if (props.containsKey(key)) {
             value = props.getProperty(key);
         }
         return value;
@@ -79,7 +79,7 @@ public class PropUtil {
      * @param key   键
      * @return 属性值
      */
-    public Integer getInteger(Properties props, String key) {
+    public static Integer getInteger(Properties props, String key) {
         return getInteger(props, key, 0);
     }
 
@@ -92,9 +92,9 @@ public class PropUtil {
      * @param defaultValue 默认值
      * @return 属性值
      */
-    public Integer getInteger(Properties props, String key, Integer defaultValue) {
+    public static Integer getInteger(Properties props, String key, Integer defaultValue) {
         Integer value = defaultValue;
-        if (props.contains(key)) {
+        if (props.containsKey(key)) {
             value = CastUtil.castInteger(props.getProperty(key));
         }
         return value;
@@ -107,7 +107,7 @@ public class PropUtil {
      * @param key   键
      * @return 属性值
      */
-    public Boolean getBoolean(Properties props, String key) {
+    public static Boolean getBoolean(Properties props, String key) {
         return getBoolean(props, key, false);
     }
 
@@ -119,9 +119,9 @@ public class PropUtil {
      * @param defaultValue 默认值
      * @return 属性值
      */
-    public Boolean getBoolean(Properties props, String key, Boolean defaultValue) {
+    public static Boolean getBoolean(Properties props, String key, Boolean defaultValue) {
         Boolean value = defaultValue;
-        if (props.contains(key)) {
+        if (props.containsKey(key)) {
             value = CastUtil.castBoolean(props.getProperty(key));
         }
         return value;
